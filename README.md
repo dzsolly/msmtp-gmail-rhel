@@ -56,6 +56,12 @@ By specifying msmtp in ~/.mailrc, you redirect mailx to use Gmail SMTP relay via
 You can also define the From: address, which is required by Gmail and improves email readability and authenticity.
 
 Create ~/.mailrc:
+
+```bash
+touch ~/.mailrc
+chmod 600 ~/.mailrc
+```
+
 ```bash
 set sendmail="/usr/bin/msmtp"
 set use_from=yes
