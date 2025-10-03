@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-### [Installation](#installation)
+#### [Installation](#installation)
 ### [Configure msmtp](#configure-msmtp)
 ### [Configure mailx](#configure-mailx)
 ### [Send a Test Email](#send-a-test-email)
