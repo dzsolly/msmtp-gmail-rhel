@@ -1,5 +1,18 @@
 # Gmail SMTP relay setup using msmtp + mailx on RHEL 8 and compatible systems.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Configure msmtp](#configure-msmtp)
+- [Configure mailx](#configure-mailx)
+- [Send a Test Email](#send-a-test-email)
+- [Using Multiple Gmail Accounts](#using-multiple-gmail-accounts)
+- [System Info Script Example](#system-info-script-example)
+- [Why ~/.mailrc Is Needed](#why-mailrc-is-needed)
+- [App Password Note](#app-password-note)
+- [License](#license)
+
+
 This guide helps you install and configure msmtp and mailx to send emails via Gmail SMTP relay on RHEL 8 and its derivatives (Rocky Linux, AlmaLinux). Ideal for system alerts, cron jobs, and script-based notifications.
 
 🛠️ Installation
@@ -10,7 +23,8 @@ sudo dnf install epel-release
 sudo dnf install msmtp mailx
 ```
 
-⚙️ Configure msmtp for Gmail
+## ⚙️ Configure msmtp for Gmail
+
 Create ~/.msmtprc and set permissions:
 ```bash
 touch ~/.msmtprc
@@ -41,7 +55,7 @@ account default : gmail
 
 ```
 
-📤 Configure mailx to use msmtp
+## 📤 Configure mailx to use msmtp
 
 When using mailx to send emails via msmtp, the ~/.mailrc file is essential because:
 
@@ -63,7 +77,7 @@ set from="your.email@gmail.com"
 echo "Test message body" | mailx -s "Test Subject" recipient@example.com
 ```
 
-🔀 Using multiple Gmail accounts
+## 🔀 Using multiple Gmail accounts
 
 If you manage multiple systems, environments, or roles, it’s often useful to send emails from different Gmail addresses — for example:
 
@@ -97,7 +111,7 @@ Send using a specific account:
 echo "Message" | msmtp -a gmail2 recipient@example.com
 ```
 
-🧪 Example: Sending System Info via Script
+## 🧪 Example: Sending System Info via Script
 
 You can use msmtp directly in a Bash script to send system diagnostics or alerts. Here's a real-world example that collects basic system information and emails it using Gmail SMTP relay:
 ```bash
@@ -132,7 +146,7 @@ INFOFILE="/tmp/system_info.txt"
 ```
 ✅ Make sure your ~/.msmtprc is properly configured with Gmail credentials and default account.
 
-🚀 How to Use
+## 🚀 How to Use
 
 Save the script to a file:
 ```bash
@@ -152,6 +166,10 @@ Run the script:
 
 ✅ The recipient will receive a clean, readable email with proper headers, subject line, and UTF-8 encoding — no raw dumps or broken formatting.
 
+
+## License
+
+This project is licensed under the MIT License.
 
 
 This approach is ideal for cron jobs, monitoring scripts, or remote diagnostics. You can extend it to include disk usage, mount point checks, or alert thresholds.
