@@ -65,6 +65,16 @@ echo "Test message body" | mailx -s "Test Subject" recipient@example.com
 
 🔀 Using multiple Gmail accounts
 
+If you manage multiple systems, environments, or roles, it’s often useful to send emails from different Gmail addresses — for example:
+
+alerts@yourdomain.com for system warnings
+
+reports@yourdomain.com for daily summaries
+
+admin@yourdomain.com for manual notifications
+
+With msmtp, you can define multiple accounts in your ~/.msmtprc file and choose which one to use when sending.
+
 Add multiple accounts to ~/.msmtprc:
 ```bash
 account gmail1
