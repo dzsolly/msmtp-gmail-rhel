@@ -8,8 +8,10 @@
 - [Send a Test Email](#send-a-test-email)
 - [Using Multiple Gmail Accounts](#using-multiple-gmail-accounts)
 - [System Info Script Example](#system-info-script-example)
+- [How to Use the Script](#how-to-use-the-script)
 - [Why ~/.mailrc Is Needed](#why-mailrc-is-needed)
 - [App Password Note](#app-password-note)
+- [Troubleshooting](#troubleshooting)
 - [License](#license)
 
 
