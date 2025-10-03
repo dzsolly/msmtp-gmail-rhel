@@ -33,9 +33,12 @@ user           your.email@gmail.com
 password       your_app_password
 
 account default : gmail
+```
 
-NOTE: 🔐 Gmail requires an App Password if 2FA is enabled. 
-Check it: https://support.google.com/accounts/answer/185833?hl=en
+```bash
+> **⚠️ NOTE:** Gmail requires an **App Password** if **Two-Factor Authentication (2FA)** is enabled.  
+> You can generate one here: [Google App Passwords Guide](https://support.google.com/accounts/answer/185833?hl=en)
+
 ```
 
 📤 Configure mailx to use msmtp
