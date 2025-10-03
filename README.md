@@ -43,6 +43,14 @@ account default : gmail
 
 📤 Configure mailx to use msmtp
 
+When using mailx to send emails via msmtp, the ~/.mailrc file is essential because:
+
+mailx doesn’t know by default which mail transfer agent (MTA) to use. Without configuration, it may try to use sendmail or postfix, which might not be installed or properly set up.
+
+By specifying msmtp in ~/.mailrc, you redirect mailx to use Gmail SMTP relay via msmtp, ensuring reliable delivery.
+
+You can also define the From: address, which is required by Gmail and improves email readability and authenticity.
+
 Create ~/.mailrc:
 ```bash
 set sendmail="/usr/bin/msmtp"
